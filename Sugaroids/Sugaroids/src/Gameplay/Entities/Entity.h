@@ -17,6 +17,7 @@ public:
 	Entity(Vector2 position, float angle = 0.0f);
 	virtual ~Entity();
 
+	Vector2 GetPosition();
 	void SetPosition(Vector2 position);
 	void SetAngle(float angle);
 	void SetSize(float size);

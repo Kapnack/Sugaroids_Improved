@@ -19,9 +19,11 @@ namespace Sugaroids
 	{
 
 	public:
+
 		Sugaroid();
 		Sugaroid(Vector2 position, Vector2 targetPos);
 		virtual ~Sugaroid() override;
+
 	};
 
 	Sugaroid CreateEnemy(Vector2 playerPosition);

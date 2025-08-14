@@ -8,8 +8,6 @@ namespace Menus
 	{
 	private:
 
-		MenuOptions* gameState = nullptr;
-
 		Texture2D* gameTitle = nullptr;
 
 		static const int maxButtons = 5;
@@ -17,12 +15,10 @@ namespace Menus
 	public:
 
 		MainMenu();
-		MainMenu(MenuOptions& gameState, Texture2D& gameTitle);
+		MainMenu(MenuOptions& gameState, Font& font, Texture2D& gameTitle);
 		~MainMenu() override;
 
 		void Init() override;
-
-		void Update(Vector2 mouse) override;
 
 		void Draw() override;
 	};

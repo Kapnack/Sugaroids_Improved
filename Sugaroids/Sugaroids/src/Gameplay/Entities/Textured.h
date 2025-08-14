@@ -11,7 +11,7 @@ protected:
 public:
 
 	Textured();
-	Textured(Vector2 position, float radius);
+	Textured(Vector2 position, float radius, float angle = 0.0f);
 	virtual ~Textured();
 
 	void SetTexure(Texture& Texture);

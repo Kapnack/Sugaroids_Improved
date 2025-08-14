@@ -20,10 +20,12 @@ void Bullet::Missile::Movement(float deltaTime = 1.0f)
 {
 	if (target != nullptr)
 	{
+		Vector2 targetPos = target->GetPosition();
+
 		float angleToSugaroid = atan2f
 		(
-			target->position.y - position.y,
-			target->position.x - position.x
+			targetPos.y - position.y,
+			targetPos.x - position.x
 		);
 
 		velocity =
@@ -33,5 +35,5 @@ void Bullet::Missile::Movement(float deltaTime = 1.0f)
 		};
 	}
 
-	Bullet::Movement(deltaTime);
+	Physics::Movement(deltaTime);
 }

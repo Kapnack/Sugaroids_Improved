@@ -18,12 +18,10 @@ namespace Bullet
 	public:
 
 		Bullet();
-		Bullet(Vector2 pos, float angle = 0.0f);
+		Bullet(Vector2 position, float radius, float angle = 0.0f);
 		virtual ~Bullet() override;
 
 		void SetSizeMultiplier(float scalar);
 		void SetSpeedMultiplier(float scalar);
-
-		void virtual Movement(float deltaTime = 1);
 	};
 }

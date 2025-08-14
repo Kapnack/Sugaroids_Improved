@@ -5,7 +5,6 @@
 #include <functional>
 
 #include "Gameplay/Entities/Textured.h"
-#include "Gameplay/Entities/VFXPlayer.h"
 #include "Gameplay/Entities/Entity.h"
 #include "powerUps.h"
 #include "Gameplay/Entities/Sugaroids/sugaroid.h"
@@ -14,13 +13,11 @@
 
 namespace Player
 {
-	class Player : public Textured, public VFXPlayer
+	class Player : public Textured
 	{
 	private:
 
 		int lives = 3;
-
-		std::function<void()> OnShoot;
 
 		Vector2 targetPos = {};
 		Vector2 directionVector = {};
@@ -32,6 +29,9 @@ namespace Player
 		int bulletBuffer = 0;
 		float fireCooldown = 0;
 
+		float blinkFrequency = 0.5f;
+		float blinkAmplitude = 1.5f;
+
 		float EXP = 0;
 		int level = 0;
 		bool levelingUp = false;
@@ -39,6 +39,9 @@ namespace Player
 		PowerUpList lastPowerUnlock = PowerUpList::None;
 
 		PowerUps boost = {};
+
+		Sound* hurt = nullptr;
+		Sound* shoot = nullptr;
 
 		void KeepInBounds();
 

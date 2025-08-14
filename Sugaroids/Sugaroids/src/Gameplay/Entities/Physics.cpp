@@ -7,8 +7,9 @@ Physics::Physics()
 {
 }
 
-Physics::Physics(Vector2 position, float radius, float angle = 0.0f) : Entity(position, angle), radius(radius)
+Physics::Physics(Vector2 position, float radius, float angle = 0.0f) : Entity(position, angle)
 {
+	this->radius = radius;
 }
 
 Physics::~Physics()
@@ -20,9 +21,19 @@ void Physics::SetRadius(float radius)
 	this->radius = radius;
 }
 
+float Physics::GetRadius()
+{
+	return radius;
+}
+
 void Physics::SetVelocity(Vector2 velocity)
 {
 	this->velocity = velocity;
+}
+
+void Physics::SetSpeed(float speed)
+{
+	this->speed 0 speed;
 }
 
 void Physics::Movement(float deltaTime)

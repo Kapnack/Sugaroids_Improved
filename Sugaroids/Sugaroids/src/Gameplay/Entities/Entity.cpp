@@ -14,6 +14,11 @@ Entity::~Entity()
 {
 }
 
+Vector2 Entity::GetPosition()
+{
+	return position;
+}
+
 void Entity::SetPosition(Vector2 position)
 {
 	this->position = position;

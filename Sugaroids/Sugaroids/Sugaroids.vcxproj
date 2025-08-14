@@ -24,6 +24,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Menus\GameOver\GameOver.h" />
+    <ClInclude Include="src\Menus\Pause\Pause.h" />
     <ClInclude Include="src\ProgramState.h" />
     <ClInclude Include="src\Menus\Credits\Credits.h" />
     <ClInclude Include="src\Menus\Menu.h" />
@@ -41,9 +43,10 @@
     <ClInclude Include="src\Gameplay\Entities\Sugaroids\Sugaroid.h" />
     <ClInclude Include="src\Managers\VFXManager.h" />
     <ClInclude Include="src\Managers\TextureManager.h" />
-    <ClInclude Include="src\Gameplay\Entities\VFXPlayer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Menus\GameOver\GameOver.cpp" />
+    <ClCompile Include="src\Menus\Pause\Pause.cpp" />
     <ClCompile Include="src\ProgramState.cpp" />
     <ClCompile Include="src\Menus\Credits\Credits.cpp" />
     <ClCompile Include="src\Menus\Menu.cpp" />
@@ -61,7 +64,6 @@
     <ClCompile Include="src\Gameplay\Entities\Sugaroids\Sugaroid.cpp" />
     <ClCompile Include="src\Managers\VFXManager.cpp" />
     <ClCompile Include="src\Managers\TextureManager.cpp" />
-    <ClCompile Include="src\Gameplay\Entities\VFXPlayer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

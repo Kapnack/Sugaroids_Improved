@@ -3,7 +3,7 @@
 #include <ctime>
 
 #include "Gameplay/Gameplay.h"
-#include "Buttons.h"
+#include "Button.h"
 
 const int Program::Program::screenWidth = 1024;
 const int Program::Program::screenHeight = 768;
@@ -46,7 +46,7 @@ void Program::Program::CreateWindow()
 
 void Program::Program::InitAssets()
 {
-	font = LoadFontEx("../res/fonts/rubikBubbles/RubikBubbles-Regular.ttf", static_cast<int>(titlesFontSize), 0, 0);
+	font = LoadFontEx("../res/fonts/rubikBubbles/RubikBubbles-Regular.ttf", static_cast<int>(TitleFontSize), 0, 0);
 
 	soundTrackManager.Init();
 	vfxManager.Init();
@@ -55,6 +55,8 @@ void Program::Program::InitAssets()
 
 void Program::Program::UnloadAssets()
 {
+	UnloadFont(font);
+
 	soundTrackManager.Unload();
 	vfxManager.Unload();
 	textureManager.Unload();
@@ -149,38 +151,7 @@ void Program::Program::Loop()
 
 		case MenuOptions::Playing:
 
-			if (timmerToCleanBuffer <= 0)
-			{
-				if (gameOver)
-				{
-					Scene::DrawGameOver(gameState, font);
-
-					GameManager::ShouldResetMatch(gameState, player, bullets, sugaroids, gameOver, points, sugaroidsSpawnRate, spawnTimer);
-				}
-				else
-				{
-					Scene::DrawGamePlay(shader, bullets, sugaroids, player, textureManager.bullets, textureManager.player, textureManager.sugaroid, textureManager.cometkie, textureManager.chip);
-
-					if (pause)
-					{
-						Scene::DrawPauseMenu(gameState, font, pause);
-
-						if (gameState == MenuOptions::MainMenu)
-							GameManager::ResetGame(bullets, sugaroids, player, gameOver, points, sugaroidsSpawnRate, spawnTimer);
-					}
-
-					if (player.levelingUp && !allBoostsUnlocked)
-					{
-						Scene::DrawPowerUpUnlockHud(player.lastPowerUnlock, player.levelingUp, font);
-					}
-
-					DrawTextEx(font, pointsText.c_str(), Vector2{ 0,0 }, scoreFontSize, 0, BLACK);
-					DrawTextEx(font, playerLives.c_str(), Vector2{ 0, 20 }, scoreFontSize, 0, BLACK);
-
-				}
-			}
-			else
-				timmerToCleanBuffer -= 0.1f * deltaTime;
+			
 
 			break;
 

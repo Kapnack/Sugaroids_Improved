@@ -2,7 +2,9 @@
 
 #include <raylib.h>
 #include <list>
+#include <string>
 
+#include "ProgramState.h"
 #include "Managers/SoundTrackManager.h"
 #include "Managers/VFXManager.h"
 #include "Managers/TextureManager.h"
@@ -35,9 +37,9 @@ namespace Program
 	{
 	private:
 
-		float TitleSize = titlesFontSize;
+		float TitleFontSize = 100.0f;
 
-		const string programName = "Sugaroids";
+		const std::string programName = "Sugaroids";
 
 		double time = 0;
 
@@ -48,22 +50,16 @@ namespace Program
 		MenuOptions gameState = MenuOptions::MainMenu;
 		MenuOptions previousMenu = MenuOptions::MainMenu;
 
+		ProgramState* currentState = nullptr;
+		ProgramState* previousState = nullptr;
+
 		Font font;
-
-		std::list<Bullet::Bullet> bullets;
-		std::list<Sugaroids::Sugaroid> sugaroids;
-		std::list<Sugaroids::Sugaroid> sugaroidsChildList;
-
-
-		bool pause = false;
-		bool allBoostsUnlocked = false;
-
-		float blinkFrequency = 0.5f;
-		float blinkAmplitude = 1.5f;
 
 		void SetState(MenuOptions state);
 
 		void Loop();
+		void Draw();
+		void Unload();
 
 		void CreateWindow();
 		void InitAssets();
@@ -80,12 +76,6 @@ namespace Program
 		~Program();
 
 		void Init();
-
-		void Update();
-
-		void Draw();
-
-		void Unload();
 	};
 }
 

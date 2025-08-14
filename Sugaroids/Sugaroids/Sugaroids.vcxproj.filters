@@ -63,10 +63,13 @@
     <ClInclude Include="src\Menus\Credits\Credits.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Gameplay\Entities\VFXPlayer.h">
+    <ClInclude Include="src\ProgramState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ProgramState.h">
+    <ClInclude Include="src\Menus\Pause\Pause.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menus\GameOver\GameOver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -119,10 +122,13 @@
     <ClCompile Include="src\Menus\Credits\Credits.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Gameplay\Entities\VFXPlayer.cpp">
+    <ClCompile Include="src\ProgramState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ProgramState.cpp">
+    <ClCompile Include="src\Menus\Pause\Pause.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\GameOver\GameOver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

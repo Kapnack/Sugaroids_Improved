@@ -4,7 +4,7 @@ Textured::Textured()
 {
 }
 
-Textured::Textured(Vector2 position, float radius = 0.0f) : Physics(position, radius)
+Textured::Textured(Vector2 position, float radius, float angle = 0.0f) : Physics(position, radius, angle)
 {
 }
 

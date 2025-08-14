@@ -76,8 +76,6 @@ Bullet::Bullet* Player::Player::Shoot()
 	else
 		bulletBuffer = 1;
 
-	OnShoot();
-
 	if (fireCooldown <= 0)
 	{
 		if (bulletBuffer > 0)

@@ -6,5 +6,9 @@ int main()
 
 	program.Init();
 
+	program.Update();
+
+	program.Unload();
+
 	return 0;
 }
