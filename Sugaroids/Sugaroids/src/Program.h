@@ -55,9 +55,12 @@ namespace Program
 
 		Font font;
 
+		Vector2 mouse = { 0.0f, 0.0f };
+
 		void SetState(MenuOptions state);
 
 		void Loop();
+		void Update();
 		void Draw();
 		void Unload();
 
